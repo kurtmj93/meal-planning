@@ -29,14 +29,6 @@ if (!plan) {
 
     <div class="overview">
       <p><strong>{plan.overview}</strong></p>
-      <table class="cal-table" style="width:100%;margin-top:1rem;border-collapse:collapse;">
-        <thead><tr><th style="text-align:left;padding:.5rem;">Per serving</th><th style="text-align:right;padding:.5rem;">Calories</th></tr></thead>
-        <tbody>
-          {plan.recipes.map(r => (
-            <tr><td style="padding:.4rem .5rem;">~{r.cal}</td><td style="text-align:right;padding:.4rem .5rem;">~{r.cal}</td></tr>
-          ))}
-        </tbody>
-      </table>
     </div>
 
     <h2>Shopping List</h2>
