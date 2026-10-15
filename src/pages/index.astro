@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { plans } from '../data/plans';
+import { A } from 'astro:components';
 
 const slugList = Object.keys(plans);
 const allPlans = slugList.map(slug => plans[slug]);
@@ -19,9 +20,9 @@ const allPlans = slugList.map(slug => plans[slug]);
     return (
       <div class="plan-card">
         <div>
-          <a href={`/plans/${plan.slug}/`}>
+          <A href={`/plans/${plan.slug}/`}>
             {plan.emoji} {plan.title}
-          </a>
+          </A>
           <div class="plan-meta">
             {plan.protein} · {plan.styles.join(', ')}
           </div>
@@ -59,7 +60,7 @@ const allPlans = slugList.map(slug => plans[slug]);
         const psHigh = plan.estTotalHigh / (plan.recipeCount * 2);
         return (
           <tr data-name={plan.title} data-protein={plan.protein} data-styles={plan.styles.join(', ')} data-total-low={plan.estTotalLow} data-total-high={plan.estTotalHigh} data-ps-low={psLow} data-ps-high={psHigh} data-best-for={plan.bestFor}>
-            <td><a href={`/plans/${plan.slug}/`}>{plan.title}</a></td>
+            <td><A href={`/plans/${plan.slug}/`}>{plan.title}</A></td>
             <td>{plan.protein}</td>
             <td>{plan.styles.join(', ')}</td>
             <td>~${Math.round(plan.estTotalLow)}–${Math.round(plan.estTotalHigh)}</td>
