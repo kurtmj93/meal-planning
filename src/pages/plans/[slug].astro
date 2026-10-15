@@ -8,7 +8,7 @@ export function getStaticPaths() {
 
 const { slug } = Astro.params;
 const plan = plans[slug];
-const base = Astro.base;
+const base = '/meal-planning/';
 
 if (!plan) {
   Astro.redirect('/');
