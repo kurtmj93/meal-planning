@@ -1397,5 +1397,343 @@ export const plans: Record<string, MealPlan> = {
       ]
     },
     bestFor: "Pre-seasoned protein, minimal prep"
+  },
+
+  "shrimp-noodles": {
+    slug: "shrimp-noodles",
+    title: "Shrimp & Noodles",
+    emoji: "🦐",
+    protein: "Shrimp",
+    styles: ["Asian", "Thai", "Mexican", "Mediterranean"],
+    recipeCount: 4,
+    maxMinutes: 20,
+    estTotalLow: 21.50,
+    estTotalHigh: 35.75,
+    overview: "The fastest protein on this list — shrimp cooks in 2–3 minutes. Four different meals (lo mein, Thai rice noodles, shrimp tacos, Mediterranean tomato rice) from one bag of frozen shrimp and overlapping produce. Cook for two (leftover). Pantry staples assumed on hand: oil, salt, pepper, soy sauce, sesame oil, garlic, cumin, smoked paprika, chili powder, dried oregano, red pepper flakes. If you need any of those, add ~$5.",
+    color: "#0ea5e9",
+    shopping: {
+      produce: ["3 bell peppers (mixed colors)", "1 large onion", "1 head garlic", "1 bunch scallions", "2 limes"],
+      protein: ["2 lbs frozen peeled raw shrimp (16–20 count)"],
+      pantry: ["Egg noodles, 1 lb dry", "Dried rice noodles, 8 oz", "Rice (white or brown, 1 lb bag if needed)", "1 pack flour tortillas (8–10 count)", "1 can (14.5 oz) diced tomatoes"],
+      dairy: ["Shredded Mexican-blend cheese (8 oz)"]
+    },
+    priceItems: [
+      { item: "Frozen peeled raw shrimp", qty: "2 lbs", low: 8.00, high: 14.00 },
+      { item: "Egg noodles (dry)", qty: "1 lb", low: 1.00, high: 1.75 },
+      { item: "Dried rice noodles", qty: "8 oz", low: 1.50, high: 2.50 },
+      { item: "Bell peppers (3 mixed)", qty: "3", low: 3.00, high: 4.50 },
+      { item: "Large onion", qty: "1", low: 0.50, high: 0.75 },
+      { item: "Garlic head", qty: "1", low: 0.50, high: 0.75 },
+      { item: "Scallions", qty: "1 bunch", low: 0.50, high: 0.75 },
+      { item: "Limes", qty: "2", low: 0.50, high: 1.00 },
+      { item: "Flour tortillas", qty: "1 pack (8–10)", low: 1.50, high: 2.50 },
+      { item: "Diced tomatoes", qty: "1 can (14.5 oz)", low: 1.00, high: 1.75 },
+      { item: "Shredded Mexican-blend cheese", qty: "8 oz", low: 2.00, high: 3.50 },
+      { item: "Rice (if needed)", qty: "1 lb bag", low: 1.00, high: 2.00 }
+    ],
+    recipes: [
+      {
+        emoji: "🍜", name: "Asian Shrimp & Pepper Lo Mein", style: "Asian", time: 15, cal: 560, servings: 2,
+        ingredients: ["6 oz raw shrimp, thawed", "4 oz dry egg noodles (about 1⅔ cups)", "½ bell pepper, sliced", "¼ onion, sliced", "3 cloves garlic, minced", "2 tbsp soy sauce", "1 tsp sesame oil", "Red pepper flakes, to taste", "1 scallion, sliced (garnish)", "Salt, pepper"],
+        leftovers: ["~1 lb 10 oz shrimp", "Remaining egg noodles (about 12 oz)", "Remaining bell peppers, onion, garlic, scallions", "Rice, tortillas, cheese, tomatoes (untouched)"],
+        instructions: [
+          "Cook egg noodles per package directions; drain and rinse briefly under cold water.",
+          "While noodles cook, stir the soy sauce and a pinch of red pepper flakes in a small bowl.",
+          "Heat sesame oil in a wok or large skillet over high heat. Cook shrimp 2–3 min until pink; remove.",
+          "Add bell pepper and onion; stir-fry 2 min until crisp-tender.",
+          "Add garlic; cook 30 seconds. Pour in the soy mixture.",
+          "Add noodles and shrimp; toss 1 min until hot and coated.",
+          "Top with scallions."
+        ]
+      },
+      {
+        emoji: "🌶️", name: "Thai-Style Shrimp & Rice Noodles", style: "Thai", time: 15, cal: 530, servings: 2,
+        ingredients: ["6 oz raw shrimp, thawed", "4 oz dry rice noodles (about 1⅔ cups)", "1 bell pepper, sliced thin", "¼ onion, sliced", "3 cloves garlic, minced", "2 tbsp soy sauce", "1 tsp sesame oil", "Pinch of red pepper flakes (or more)", "1 lime, cut into wedges", "Salt, pepper"],
+        leftovers: ["~1 lb 10 oz shrimp", "Remaining bell peppers, onion, garlic", "Rice, egg noodles, tortillas, cheese (untouched)"],
+        instructions: [
+          "Soak rice noodles in warm water 8–10 min until pliable; drain.",
+          "Heat sesame oil in a wok or large skillet over high heat.",
+          "Cook shrimp 2–3 min; remove.",
+          "Add onion and bell pepper; stir-fry 2 min.",
+          "Add garlic and red pepper flakes; cook 30 seconds.",
+          "Add noodles and soy sauce; toss 1–2 min until hot and coated.",
+          "Return shrimp. Squeeze lime over before serving."
+        ]
+      },
+      {
+        emoji: "🌮", name: "Mexican Shrimp Tacos", style: "Mexican", time: 15, cal: 450, servings: 2,
+        ingredients: ["6 oz raw shrimp, thawed", "4 flour tortillas", "½ bell pepper, thinly sliced", "¼ onion, diced", "1 clove garlic, minced", "1 tsp cumin", "1 tsp chili powder", "2 oz shredded cheese (1 oz per person)", "¼ can diced tomatoes (quick salsa)", "½ lime", "Olive oil, salt, pepper"],
+        leftovers: ["~1 lb 10 oz shrimp", "Remaining tortillas (4–8)", "Remaining bell peppers, onion", "Half can diced tomatoes", "Rice, egg noodles, rice noodles (untouched)"],
+        instructions: [
+          "Toss shrimp with cumin, chili powder, and a pinch of salt.",
+          "Heat a little olive oil in a skillet over medium-high heat.",
+          "Cook shrimp 2–3 min until pink; remove.",
+          "In the same pan, cook sliced bell pepper and onion with the minced garlic 2 min.",
+          "Warm tortillas in the pan 30 seconds per side.",
+          "Top tortillas with shrimp, peppers, cheese, and a spoonful of the tomatoes.",
+          "Squeeze with lime."
+        ]
+      },
+      {
+        emoji: "🫕", name: "Mediterranean Shrimp & Tomato Rice", style: "Mediterranean", time: 20, cal: 550, servings: 2,
+        ingredients: ["6 oz raw shrimp, thawed", "¾ cup uncooked rice (about 1⅝ cups cooked)", "½ can diced tomatoes", "¼ onion, diced", "2 cloves garlic, minced", "1 tsp dried oregano", "1 tsp smoked paprika", "1 tbsp olive oil", "Salt, pepper"],
+        leftovers: ["~6 oz shrimp", "Remaining onion, garlic", "Remaining rice", "Remaining tortillas, cheese"],
+        instructions: [
+          "Cook rice per package directions.",
+          "Season shrimp with oregano, paprika, salt, and pepper.",
+          "Heat olive oil in a skillet over medium-high heat; cook shrimp 2–3 min; remove.",
+          "Add onion and garlic; cook 1 min.",
+          "Add the tomatoes; simmer 3 min until slightly thickened.",
+          "Return shrimp to heat through (1 min).",
+          "Serve over rice."
+        ]
+      }
+    ],
+    usage: [
+      { item: "Shrimp (2 lbs)", desc: "6 oz × 4 recipes = 24 oz used of 32 oz → ~8 oz leftover, freeze for next time" },
+      { item: "Bell peppers (3)", desc: "½ + 1 + ½ + ½ = 3 used ✓" },
+      { item: "Onion (1 large)", desc: "¼ × 4 recipes = 1 used ✓" },
+      { item: "Garlic (1 head)", desc: "3 + 3 + 1 + 2 = 9 cloves used ✓" },
+      { item: "Scallions", desc: "2 used (lo mein garnish); rest lasts in the fridge ~1 week" },
+      { item: "Limes (2)", desc: "1 Thai + ½ tacos ≈ 1.5 used; ½–1 leftover" },
+      { item: "Egg noodles (1 lb)", desc: "4 oz used in lo mein; ~12 oz leftover — great for fried rice or a quick soup base" },
+      { item: "Rice noodles (8 oz)", desc: "4 oz used in Thai dish; 4 oz leftover" },
+      { item: "Rice", desc: "1½ cups uncooked (¾ per serving) → Mediterranean only, plenty of a 1 lb bag left" },
+      { item: "Tortillas (8–10)", desc: "4 for tacos, 4–6 leftover" },
+      { item: "Diced tomatoes (1 can)", desc: "¼ can tacos + ½ can Mediterranean ≈ most of the can used" },
+      { item: "Cheese (8 oz)", desc: "2 oz tacos; ~6 oz leftover" }
+    ],
+    scaling: {
+      low: 2.69,
+      high: 4.47,
+      tips: [
+        "Shrimp: Costco/Sam's Club bulk bags (2–5 lb) run $3.50–5/lb vs $7–9/lb retail. Freeze in 6 oz portions — one per recipe.",
+        "Noodles: dried egg and rice noodles are $1–2 per bag and last months unopened. Buy 2–3 styles and rotate.",
+        "Buy shrimp frozen, not fresh — same product, ~40% cheaper, and it thaws overnight in the fridge."
+      ]
+    },
+    bestFor: "Fastest protein on the list, noodle variety"
+  },
+
+  "white-fish": {
+    slug: "white-fish",
+    title: "White Fish & Veggies",
+    emoji: "🐟",
+    protein: "Frozen white fish (tilapia, cod, or pollock)",
+    styles: ["Mexican", "Asian", "Mediterranean", "Indian"],
+    recipeCount: 4,
+    maxMinutes: 25,
+    estTotalLow: 23.50,
+    estTotalHigh: 37.75,
+    overview: "Frozen white fish is the budget middle ground between canned tuna and salmon — mild flavor that takes on whatever style you cook it in. Four meals from 3 lbs of fillets (tilapia, cod, or pollock work). Cook for two (leftover). Pantry staples assumed on hand: oil, salt, pepper, soy sauce, sesame oil, garlic, cumin, smoked paprika, chili powder, dried oregano, curry powder, garam masala, red pepper flakes. If you need any of those, add ~$5.",
+    color: "#6366f1",
+    shopping: {
+      produce: ["3 bell peppers (mixed colors)", "1 large onion", "1 head garlic", "1 bunch scallions", "2 limes"],
+      protein: ["3 lbs frozen white fish fillets (tilapia, cod, or pollock; 6–8 fillets)"],
+      pantry: ["1 pack corn tortillas (8–10 count)", "Rice (white or brown, 1 lb bag if needed)", "2 cans (14.5 oz) diced tomatoes"],
+      dairy: ["Shredded Mexican-blend cheese (8 oz)"]
+    },
+    priceItems: [
+      { item: "Frozen white fish fillets", qty: "3 lbs", low: 12.00, high: 18.00 },
+      { item: "Bell peppers (3 mixed)", qty: "3", low: 3.00, high: 4.50 },
+      { item: "Large onion", qty: "1", low: 0.50, high: 0.75 },
+      { item: "Garlic head", qty: "1", low: 0.50, high: 0.75 },
+      { item: "Scallions", qty: "1 bunch", low: 0.50, high: 0.75 },
+      { item: "Limes", qty: "2", low: 0.50, high: 1.00 },
+      { item: "Corn tortillas", qty: "1 pack (8–10)", low: 1.50, high: 2.50 },
+      { item: "Diced tomatoes", qty: "2 cans (14.5 oz)", low: 2.00, high: 3.50 },
+      { item: "Shredded Mexican-blend cheese", qty: "8 oz", low: 2.00, high: 3.50 },
+      { item: "Rice (if needed)", qty: "1 lb bag", low: 1.00, high: 2.00 }
+    ],
+    recipes: [
+      {
+        emoji: "🌮", name: "Mexican Fish Tacos", style: "Mexican", time: 15, cal: 460, servings: 2,
+        ingredients: ["2 white fish fillets (6 oz each)", "4 corn tortillas", "½ bell pepper, thinly sliced", "¼ onion, diced", "1 clove garlic, minced", "1 tsp cumin", "1 tsp chili powder", "2 oz shredded cheese (1 oz per person)", "¼ can diced tomatoes (quick salsa)", "½ lime", "Olive oil, salt, pepper"],
+        leftovers: ["~2 lb 4 oz white fish fillets", "Remaining tortillas (4–8)", "Remaining bell peppers, onion, garlic", "Half can diced tomatoes", "Rice, scallions (untouched)"],
+        instructions: [
+          "Pat fillets dry. Season both sides with cumin, chili powder, salt, and pepper.",
+          "Heat olive oil in a skillet over medium-high heat.",
+          "Cook fish 3–4 min per side until just opaque and flaking.",
+          "Rest 2 min, then flake with a fork.",
+          "In the same pan, cook bell pepper and onion with the minced garlic 2 min.",
+          "Warm tortillas 30 seconds per side.",
+          "Top with fish, peppers, cheese, and a spoonful of tomatoes. Squeeze with lime."
+        ]
+      },
+      {
+        emoji: "🥡", name: "Asian White Fish & Rice Bowl", style: "Asian", time: 20, cal: 580, servings: 2,
+        ingredients: ["2 white fish fillets (6 oz each)", "1 cup uncooked rice (2 cups cooked)", "1 bell pepper, sliced", "¼ onion, sliced", "3 cloves garlic, minced", "2 tbsp soy sauce", "1 tsp sesame oil", "1 scallion, sliced (garnish)", "Red pepper flakes, to taste", "Salt, pepper"],
+        leftovers: ["1 lb 8 oz white fish fillets", "Remaining bell peppers, onion, garlic, scallions", "Remaining rice"],
+        instructions: [
+          "Cook rice per package directions.",
+          "Pat fillets dry; season lightly with salt.",
+          "Heat sesame oil in a large skillet over medium-high heat.",
+          "Sear fish 3–4 min per side until opaque; remove.",
+          "Add onion and bell pepper; cook 2 min. Add garlic for 30 seconds.",
+          "Drizzle soy sauce and red pepper flakes over the fish.",
+          "Slice fish over rice with the peppers. Top with scallions."
+        ]
+      },
+      {
+        emoji: "🫕", name: "Mediterranean Baked Fish & Tomatoes", style: "Mediterranean", time: 20, cal: 540, servings: 2,
+        ingredients: ["2 white fish fillets (6 oz each)", "¾ cup uncooked rice (about 1⅝ cups cooked)", "1 can (14.5 oz) diced tomatoes", "¼ onion, diced", "2 cloves garlic, minced", "1 tsp dried oregano", "1 tsp smoked paprika", "1 tbsp olive oil", "Salt, pepper"],
+        leftovers: ["~12 oz white fish fillets", "Remaining bell peppers, onion, garlic", "Remaining rice, scallions"],
+        instructions: [
+          "Cook rice per package directions.",
+          "Preheat oven to 400°F (200°C).",
+          "Rub fillets with oregano, paprika, salt, and pepper.",
+          "Spread the tomatoes with onion and garlic in a baking dish; nestle fish on top.",
+          "Bake 12–14 min until flaking.",
+          "Serve over rice with the tomato sauce spooned on top."
+        ]
+      },
+      {
+        emoji: "🍛", name: "Indian White Fish Curry", style: "Indian", time: 25, cal: 650, servings: 2,
+        ingredients: ["2 white fish fillets, cut into 1½-inch pieces (6 oz each)", "1 cup uncooked rice (2 cups cooked)", "1 can (14.5 oz) diced tomatoes", "½ bell pepper, diced", "¼ onion, diced", "2 cloves garlic, minced", "1 tsp curry powder", "½ tsp garam masala", "1 tbsp olive oil", "½ lime", "Salt, pepper"],
+        leftovers: ["No fish left", "Remaining onion, garlic, bell pepper", "Remaining rice"],
+        instructions: [
+          "Cook rice per package directions.",
+          "Heat olive oil in a skillet over medium heat.",
+          "Cook onion 2 min until softened; add garlic, curry powder, and garam masala for 30 seconds.",
+          "Add tomatoes and bell pepper; simmer 4 min.",
+          "Add fish pieces; cook 3–4 min until just opaque (don't overcook).",
+          "Squeeze in lime. Serve over rice."
+        ]
+      }
+    ],
+    usage: [
+      { item: "White fish (3 lbs)", desc: "2 fillets (6 oz each) × 4 recipes = 48 oz = 3 lbs used ✓" },
+      { item: "Bell peppers (3)", desc: "½ + 1 + ½ + ½ = 2.5 used; ½ pepper leftover" },
+      { item: "Onion (1 large)", desc: "¼ × 4 recipes = 1 used ✓" },
+      { item: "Garlic (1 head)", desc: "1 + 3 + 2 + 2 = 8 cloves used ✓" },
+      { item: "Scallions", desc: "1 used (Asian bowl garnish); rest lasts ~1 week" },
+      { item: "Limes (2)", desc: "½ tacos + ½ curry + a few wedges = ~1.5 used" },
+      { item: "Corn tortillas (8–10)", desc: "4 for tacos, 4–6 leftover" },
+      { item: "Diced tomatoes (2 cans)", desc: "¼ can tacos + 1 can baked + 1 can curry — 2 cans used ✓" },
+      { item: "Cheese (8 oz)", desc: "2 oz tacos; ~6 oz leftover" },
+      { item: "Rice", desc: "1 cup + ¾ cup + 1 cup uncooked ≈ 2⅝ cups → plenty of a 1 lb bag used" }
+    ],
+    scaling: {
+      low: 2.94,
+      high: 4.72,
+      tips: [
+        "Frozen fillets: Costco/Sam's Club bulk bags run $4–6/lb vs $7–10 retail. Tuna-grade tilapia and pollock are the cheapest; cod is pricier but firmer.",
+        "Defrost in the fridge overnight — never microwave fish you're going to cook for two.",
+        "Frozen fish can be pan-fried straight from frozen (add 1–2 min per side) if you forget to defrost."
+      ]
+    },
+    bestFor: "Mild, cheap fillets in four different styles"
+  },
+
+  "bacon-eggs": {
+    slug: "bacon-eggs",
+    title: "Bacon & Eggs",
+    emoji: "🥓",
+    protein: "Bacon, eggs",
+    styles: ["American", "Mexican", "Classic", "Mediterranean"],
+    recipeCount: 4,
+    maxMinutes: 25,
+    estTotalLow: 19.00,
+    estTotalHigh: 32.50,
+    overview: "Bacon is the cheapest smoky protein per pound, and with eggs you've got a complete, fast protein pair. Four different meals — fried rice, tacos, potato hash, and a shakshuka-style skillet — all under 25 minutes. Cook for two (leftover). Pantry staples assumed on hand: oil, salt, pepper, soy sauce, sesame oil, garlic, cumin, smoked paprika, chili powder, dried oregano, red pepper flakes. If you need any of those, add ~$5.",
+    color: "#b45309",
+    shopping: {
+      produce: ["2 bell peppers (mixed colors)", "1 large onion", "1 head garlic", "1 bunch scallions", "Potatoes, 3 lbs (russet or any)"],
+      protein: ["2 lbs bacon (2–3 packs)", "1 dozen large eggs"],
+      pantry: ["Rice (white or brown, 1 lb bag if needed)", "1 pack flour tortillas (8–10 count)", "1 can (14.5 oz) diced tomatoes"],
+      dairy: ["Shredded Mexican-blend cheese (8 oz)"]
+    },
+    priceItems: [
+      { item: "Bacon", qty: "2 lbs", low: 6.00, high: 10.00 },
+      { item: "Eggs", qty: "1 dozen", low: 2.00, high: 3.50 },
+      { item: "Potatoes", qty: "3 lbs", low: 2.00, high: 4.00 },
+      { item: "Bell peppers (2 mixed)", qty: "2", low: 2.00, high: 3.00 },
+      { item: "Large onion", qty: "1", low: 0.50, high: 0.75 },
+      { item: "Garlic head", qty: "1", low: 0.50, high: 0.75 },
+      { item: "Scallions", qty: "1 bunch", low: 0.50, high: 0.75 },
+      { item: "Rice (if needed)", qty: "1 lb bag", low: 1.00, high: 2.00 },
+      { item: "Flour tortillas", qty: "1 pack (8–10)", low: 1.50, high: 2.50 },
+      { item: "Diced tomatoes", qty: "1 can (14.5 oz)", low: 1.00, high: 1.75 },
+      { item: "Shredded Mexican-blend cheese", qty: "8 oz", low: 2.00, high: 3.50 }
+    ],
+    recipes: [
+      {
+        emoji: "🍳", name: "Bacon & Egg Fried Rice", style: "American", time: 20, cal: 810, servings: 2,
+        ingredients: ["1 cup uncooked rice (about 2 cups cooked, day-old is ideal)", "4 oz bacon, chopped", "2 eggs", "½ bell pepper, diced small", "¼ onion, diced small", "2 cloves garlic, minced", "2 tbsp soy sauce", "1 tsp sesame oil", "1 scallion, sliced (garnish)"],
+        leftovers: ["~1 lb 12 oz bacon", "10 eggs", "Remaining bell peppers, onion, garlic", "Remaining rice", "Tortillas, cheese, tomatoes (untouched)"],
+        instructions: [
+          "Cook rice per package directions (best with day-old, cold rice for fried rice).",
+          "Fry bacon in a cold skillet over medium heat until crisp, ~6–7 min. Drain on paper towels.",
+          "Leave ~1 tbsp of bacon fat in the pan. Crack in eggs; scramble 1 min, then push to the side.",
+          "Add onion, bell pepper, and garlic; stir-fry 2 min.",
+          "Add cooked rice, soy sauce, and sesame oil; toss 2–3 min until hot.",
+          "Fold in the bacon. Top with scallions."
+        ]
+      },
+      {
+        emoji: "🌮", name: "Bacon & Egg Tacos", style: "Mexican", time: 15, cal: 590, servings: 2,
+        ingredients: ["4 oz bacon, cooked and chopped", "2 eggs", "4 flour tortillas", "½ bell pepper, sliced thin", "¼ onion, diced", "1 clove garlic, minced", "1 tsp cumin", "1 tsp chili powder", "1 oz shredded cheese (½ oz per person)", "Olive oil, salt, pepper"],
+        leftovers: ["~1 lb 8 oz bacon", "8 eggs", "Remaining tortillas (4–8)", "Remaining bell peppers, onion", "Rice, potatoes, cheese, tomatoes (untouched)"],
+        instructions: [
+          "Cook bacon until crisp; chop. Leave a little fat in the pan.",
+          "In the bacon fat, cook sliced bell pepper and onion with the minced garlic 2 min.",
+          "Add cumin, chili powder, and a pinch of salt; cook 30 seconds.",
+          "Scramble the eggs in the same pan until just set.",
+          "Warm tortillas 30 seconds per side.",
+          "Top with eggs, bacon, peppers, and cheese."
+        ]
+      },
+      {
+        emoji: "🥓", name: "Smoky Bacon Potato Hash", style: "Classic", time: 25, cal: 550, servings: 2,
+        ingredients: ["1 lb potatoes, diced ¼-inch", "3 oz bacon, chopped", "½ bell pepper, diced", "¼ onion, diced", "1 tbsp olive oil", "1 tsp dried oregano", "1 tsp smoked paprika", "1 egg (topping)", "Salt, pepper"],
+        leftovers: ["~1 lb 5 oz bacon", "7 eggs", "~2 lbs potatoes", "Remaining bell peppers, onion", "Rice, tortillas, cheese, tomatoes (untouched)"],
+        instructions: [
+          "Heat olive oil in a large skillet over medium heat.",
+          "Add diced potatoes and a pinch of salt with a splash of water; cover and cook 8 min until tender.",
+          "Uncover; cook 2–3 min more to dry out and brown.",
+          "Add bell pepper, onion, oregano, and paprika; cook 3 min.",
+          "Add bacon; cook 2 min until just crisp.",
+          "Make two wells, crack an egg in each; cover and cook 3–4 min until set.",
+          "Season with salt and pepper."
+        ]
+      },
+      {
+        emoji: "🫕", name: "Mediterranean Shakshuka & Bacon", style: "Mediterranean", time: 20, cal: 630, servings: 2,
+        ingredients: ["1 can (14.5 oz) diced tomatoes", "½ cup uncooked rice per serving (about 1 cup cooked)", "¼ onion, diced", "2 cloves garlic, minced", "3 oz bacon, crumbled", "2 eggs", "1 tsp dried oregano", "1 tsp smoked paprika", "1 tbsp olive oil", "Salt, pepper"],
+        leftovers: ["~1 lb 2 oz bacon", "5 eggs", "Remaining onion, garlic", "Remaining rice"],
+        instructions: [
+          "Cook rice per package directions.",
+          "Heat olive oil in a skillet over medium heat.",
+          "Cook onion 2 min; add garlic, oregano, and paprika for 30 seconds.",
+          "Add tomatoes; simmer 4 min until slightly thickened.",
+          "Make two wells; crack an egg in each. Cover and cook 4–5 min until whites are set.",
+          "Scatter crumbled bacon over the top.",
+          "Serve over rice."
+        ]
+      }
+    ],
+    usage: [
+      { item: "Bacon (2 lbs)", desc: "4 oz fried rice + 4 oz tacos + 3 oz hash + 3 oz shakshuka = 14 oz used; ~18 oz leftover, freeze" },
+      { item: "Eggs (1 dozen)", desc: "2 + 2 + 1 + 2 = 7 used; 5 leftover" },
+      { item: "Potatoes (3 lbs)", desc: "1 lb hash; 2 lbs leftover — great for mashed, roasted, or next hash" },
+      { item: "Bell peppers (2)", desc: "½ × 3 recipes = 1.5 used; ½ pepper leftover" },
+      { item: "Onion (1 large)", desc: "¼ × 4 recipes = 1 used ✓" },
+      { item: "Garlic (1 head)", desc: "2 + 1 + 0 + 2 = 5 cloves used" },
+      { item: "Scallions", desc: "1 used (fried rice garnish); rest lasts ~1 week" },
+      { item: "Rice", desc: "1 cup + ½ cup uncooked per serving ≈ 3 cups total — about a 1 lb bag" },
+      { item: "Tortillas (8–10)", desc: "4 for tacos, 4–6 leftover" },
+      { item: "Diced tomatoes (1 can)", desc: "used entirely in shakshuka" },
+      { item: "Cheese (8 oz)", desc: "1 oz tacos; 7 oz leftover" }
+    ],
+    scaling: {
+      low: 2.38,
+      high: 4.06,
+      tips: [
+        "Bacon: Costco/Sam's Club 3–4 lb boxes run ~$2.50–3.50/lb vs $4–5 retail. Freeze uncooked slices in 4 oz portions.",
+        "Eggs: the big-carton (18–30 count) sizes cut the per-egg price 20–30%.",
+        "Potatoes: a 5 lb bag (~$3) keeps the hash and any potato side dishes under $1 each."
+      ]
+    },
+    bestFor: "Cheapest smoky protein, no-cook-style speed"
   }
 };
