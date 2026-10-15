@@ -57,15 +57,14 @@ const allPlans = slugList.map(slug => plans[slug]);
       {allPlans.map((plan) => {
         const psLow = plan.estTotalLow / (plan.recipeCount * 2);
         const psHigh = plan.estTotalHigh / (plan.recipeCount * 2);
-        const isBest = plan.slug === 'pasta-veggie';
         return (
-          <tr data-name={plan.title} data-protein={plan.protein} data-styles={plan.styles.join(', ')} data-total-low={plan.estTotalLow} data-total-high={plan.estTotalHigh} data-ps-low={psLow} data-ps-high={psHigh} data-best-for={plan.bestFor} class:best={isBest}>
+          <tr data-name={plan.title} data-protein={plan.protein} data-styles={plan.styles.join(', ')} data-total-low={plan.estTotalLow} data-total-high={plan.estTotalHigh} data-ps-low={psLow} data-ps-high={psHigh} data-best-for={plan.bestFor}>
             <td><a href={`/plans/${plan.slug}/`}>{plan.title}</a></td>
             <td>{plan.protein}</td>
             <td>{plan.styles.join(', ')}</td>
-            <td class:best={isBest}>~${Math.round(plan.estTotalLow)}–${Math.round(plan.estTotalHigh)}</td>
-            <td class:best={isBest}>~${psLow.toFixed(2)}–${psHigh.toFixed(2)}</td>
-            <td class:best={isBest}>{plan.bestFor}</td>
+            <td>~${Math.round(plan.estTotalLow)}–${Math.round(plan.estTotalHigh)}</td>
+            <td>~${psLow.toFixed(2)}–${psHigh.toFixed(2)}</td>
+            <td>{plan.bestFor}</td>
           </tr>
         );
       })}

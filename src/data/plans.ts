@@ -1098,8 +1098,8 @@ export const plans: Record<string, MealPlan> = {
     styles: ["Asian", "Mediterranean", "Thai", "American"],
     recipeCount: 4,
     maxMinutes: 30,
-    estTotalLow: 13.20,
-    estTotalHigh: 21.15,
+    estTotalLow: 18.20,
+    estTotalHigh: 29.15,
     overview: "Omega-3 rich. Four different meals with salmon as the protein base: a teriyaki bowl, a Mediterranean bake, a Thai stir-fry, and a simple grilled fillet. Cook for two (leftover). Pantry staples assumed on hand: oil, salt, pepper, soy sauce, sesame oil, garlic, cumin, smoked paprika, chili powder, dried oregano, red pepper flakes, curry powder, garam masala.",
     color: "#3b82f6",
     shopping: {
@@ -1109,7 +1109,7 @@ export const plans: Record<string, MealPlan> = {
       dairy: ["Feta cheese (optional) — 2 oz"]
     },
     priceItems: [
-      { item: "Salmon fillets (2, 6 oz each)", qty: "2", low: 8.00, high: 12.00 },
+      { item: "Salmon fillets (2, 6 oz each)", qty: "2", low: 13.00, high: 20.00 },
       { item: "Broccoli", qty: "1 bunch", low: 1.50, high: 2.50 },
       { item: "Bell pepper", qty: "1", low: 1.00, high: 1.50 },
       { item: "Onion", qty: "1", low: 0.50, high: 0.75 },

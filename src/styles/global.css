@@ -151,7 +151,6 @@ h3 { font-size: 1.2rem; margin: 2rem 0 .5rem; }
 .comparison-table td {
   padding: .5rem .75rem; border-bottom: 1px solid #f0f0f0;
 }
-.comparison-table tr:last-child td { font-weight: 700; border-bottom: 2px solid #e5e7eb; }
 .comparison-table .best { color: #065f46; font-weight: 600; }
 .section-divider {
   border: none; border-top: 2px solid #e5e7eb; margin: 2.5rem 0;
