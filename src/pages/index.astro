@@ -1,0 +1,113 @@
+---
+import Base from '../layouts/Base.astro';
+import { plans } from '../data/plans';
+
+const slugList = Object.keys(plans);
+const allPlans = slugList.map(slug => plans[slug]);
+---
+
+<Base>
+  <title slot="head">Quick &amp; Cheap Meals — Hub</title>
+
+  <h1>Quick &amp; Cheap Meals</h1>
+  <p class="subtitle">{allPlans.length} repeatable meal plans · each uses overlapping ingredients · 3–4 recipes per plan · serves 2</p>
+
+  <h2>Choose a Plan</h2>
+  {allPlans.map(plan => {
+    const psLow = plan.estTotalLow / (plan.recipeCount * 2);
+    const psHigh = plan.estTotalHigh / (plan.recipeCount * 2);
+    return (
+      <div class="plan-card">
+        <div>
+          <a href={`/plans/${plan.slug}/`}>
+            {plan.emoji} {plan.title}
+          </a>
+          <div class="plan-meta">
+            {plan.protein} · {plan.styles.join(', ')}
+          </div>
+          <div class="plan-features">
+            <span class="plan-feature">{plan.recipeCount} styles</span>
+            <span class="plan-feature">~${Math.round(plan.estTotalLow)}–${Math.round(plan.estTotalHigh)}</span>
+            <span class="plan-feature">≤{plan.maxMinutes} min each</span>
+          </div>
+        </div>
+        <div class="plan-price">
+          ~${psLow.toFixed(2)}–${psHigh.toFixed(2)}/serving
+        </div>
+      </div>
+    );
+  })}
+
+  <hr class="section-divider" />
+
+  <h2>Side-by-Side Comparison</h2>
+  <p style="font-size:.9rem;color:#666;margin-bottom:1rem;">Click a column header to sort.</p>
+  <table class="comparison-table" id="comparison-table">
+    <thead>
+      <tr>
+        <th data-sort="name" class="sortable">Plan ↕</th>
+        <th data-sort="protein" class="sortable">Protein ↕</th>
+        <th data-sort="styles" class="sortable">Styles</th>
+        <th data-sort="totalLow" class="sortable">Est. Total ↕</th>
+        <th data-sort="psLow" class="sortable">Per Serving ↕</th>
+        <th data-sort="bestFor" class="sortable">Best For ↕</th>
+      </tr>
+    </thead>
+    <tbody>
+      {allPlans.map((plan) => {
+        const psLow = plan.estTotalLow / (plan.recipeCount * 2);
+        const psHigh = plan.estTotalHigh / (plan.recipeCount * 2);
+        return (
+          <tr data-name={plan.title} data-protein={plan.protein} data-styles={plan.styles.join(', ')} data-total-low={plan.estTotalLow} data-total-high={plan.estTotalHigh} data-ps-low={psLow} data-ps-high={psHigh} data-best-for={plan.bestFor}>
+            <td><a href={`/plans/${plan.slug}/`}>{plan.title}</a></td>
+            <td>{plan.protein}</td>
+            <td>{plan.styles.join(', ')}</td>
+            <td>~${Math.round(plan.estTotalLow)}–${Math.round(plan.estTotalHigh)}</td>
+            <td>~${psLow.toFixed(2)}–${psHigh.toFixed(2)}</td>
+            <td>{plan.bestFor}</td>
+          </tr>
+        );
+      })}
+    </tbody>
+  </table>
+
+  <script>
+    (() => {
+      const table = document.getElementById('comparison-table');
+      const tbody = table.querySelector('tbody');
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+      let sortKey = null;
+      let ascending = true;
+
+      table.querySelectorAll('th.sortable').forEach(th => {
+        th.style.cursor = 'pointer';
+        th.addEventListener('click', () => {
+          const key = th.dataset.sort;
+          if (sortKey === key) {
+            ascending = !ascending;
+          } else {
+            sortKey = key;
+            ascending = true;
+          }
+
+          rows.sort((a, b) => {
+            const aVal = parseFloat(a.dataset[key]) || a.dataset[key] || '';
+            const bVal = parseFloat(b.dataset[key]) || b.dataset[key] || '';
+            if (typeof aVal === 'number' && typeof bVal === 'number') {
+              return ascending ? aVal - bVal : bVal - aVal;
+            }
+            return ascending
+              ? String(aVal).localeCompare(String(bVal))
+              : String(bVal).localeCompare(String(aVal));
+          });
+
+          rows.forEach(row => tbody.appendChild(row));
+
+          table.querySelectorAll('th.sortable').forEach(h => h.classList.remove('sorted'));
+          th.classList.add('sorted');
+          th.textContent = th.textContent.replace(/ ↕$/, ascending ? ' ↑' : ' ↓');
+        });
+      });
+    })();
+  </script>
+</Base>

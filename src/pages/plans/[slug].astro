@@ -1,0 +1,115 @@
+---
+import Base from '../../layouts/Base.astro';
+import { plans } from '../../data/plans';
+
+export function getStaticPaths() {
+  return Object.keys(plans).map(slug => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const plan = plans[slug];
+
+if (!plan) {
+  Astro.redirect('/');
+}
+---
+
+<Base>
+  <title slot="head">{plan.title} — Meal Plan</title>
+
+  <div style={{ "--theme": plan.color } as any} class="plan-page">
+
+    <a href="/" class="back-to-hub">← Back to Hub</a>
+
+    <h1>{plan.title}</h1>
+    <p class="subtitle">
+      {plan.protein} · {plan.recipeCount} styles · shared shopping list · serves 2 · {plan.maxMinutes} min or less each
+    </p>
+
+    <div class="overview">
+      <p><strong>{plan.overview}</strong></p>
+      <table class="cal-table" style="width:100%;margin-top:1rem;border-collapse:collapse;">
+        <thead><tr><th style="text-align:left;padding:.5rem;">Per serving</th><th style="text-align:right;padding:.5rem;">Calories</th></tr></thead>
+        <tbody>
+          {plan.recipes.map(r => (
+            <tr><td style="padding:.4rem .5rem;">~{r.cal}</td><td style="text-align:right;padding:.4rem .5rem;">~{r.cal}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Shopping List</h2>
+    <p style="font-size:.9rem;color:#666;margin-bottom:1rem;">Click items to strike them through.</p>
+    <div class="shopping-section">
+      <h3>Produce</h3>
+      <ul class="interactive-checklist">{plan.shopping.produce.map(item => <li><input type="checkbox" /> <span>{item}</span></li>)}</ul>
+    </div>
+    <div class="shopping-section">
+      <h3>Protein</h3>
+      <ul class="interactive-checklist">{plan.shopping.protein.map(item => <li><input type="checkbox" /> <span>{item}</span></li>)}</ul>
+    </div>
+    <div class="shopping-section">
+      <h3>Pantry (buy if needed)</h3>
+      <ul class="interactive-checklist">{plan.shopping.pantry.map(item => <li><input type="checkbox" /> <span>{item}</span></li>)}</ul>
+    </div>
+    {plan.shopping.dairy.length > 0 && (
+      <div class="shopping-section">
+        <h3>Dairy / Extras</h3>
+        <ul class="interactive-checklist">{plan.shopping.dairy.map(item => <li><input type="checkbox" /> <span>{item}</span></li>)}</ul>
+      </div>
+    )}
+
+    <h2>Estimated Prices</h2>
+    <table class="price-table">
+      <thead><tr><th>Item</th><th>Qty</th><th>Est. Price</th></tr></thead>
+      <tbody>
+        {plan.priceItems.map(item => (
+          <tr><td>{item.item}</td><td>{item.qty}</td><td style="text-align:right;">~${item.low}–${item.high}</td></tr>
+        ))}
+        <tr class="total-row">
+          <td colspan="2" style="text-align:right;">Total (new items only)</td>
+          <td style="text-align:right;">~${plan.estTotalLow}–${plan.estTotalHigh}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>The {plan.recipeCount} Recipes</h2>
+    {plan.recipes.map((recipe, idx) => (
+      <div class="recipe-card">
+        <h3>{recipe.emoji} {recipe.name}</h3>
+        <div class="tags">
+          <span class="tag time">⏱ {recipe.time} min</span>
+          <span class="tag style">{recipe.style}</span>
+          <span class="tag yield">Serves {recipe.servings}</span>
+          <span class="tag cal">~{recipe.cal} cal/serving</span>
+        </div>
+        <div class="ingredients-grid">
+          <div>
+            <h4>Ingredients</h4>
+            <ul>{recipe.ingredients.map(i => <li>{i}</li>)}</ul>
+          </div>
+          <div>
+            <h4>What you'll have left</h4>
+            <ul>{recipe.leftovers.map(l => <li>{l}</li>)}</ul>
+          </div>
+        </div>
+        <div class="instructions">
+          <ol>{recipe.instructions.map(step => <li>{step}</li>)}</ol>
+        </div>
+      </div>
+    ))}
+
+    <h2>Ingredient Usage Tracker</h2>
+    <ul>
+      {plan.usage.map(u => <li><strong>{u.item}:</strong> {u.desc}</li>)}
+    </ul>
+
+    <script>
+      document.querySelectorAll('.interactive-checklist input[type="checkbox"]').forEach(cb => {
+        cb.addEventListener('change', () => {
+          cb.parentElement.classList.toggle('checked', cb.checked);
+        });
+      });
+    </script>
+  </div>
+</Base>
