@@ -1,7 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { plans } from '../../data/plans';
-import { A } from 'astro:components';
 
 export function getStaticPaths() {
   return Object.keys(plans).map(slug => ({ params: { slug } }));
@@ -9,6 +8,7 @@ export function getStaticPaths() {
 
 const { slug } = Astro.params;
 const plan = plans[slug];
+const base = Astro.base;
 
 if (!plan) {
   Astro.redirect('/');
@@ -20,7 +20,7 @@ if (!plan) {
 
   <div style={{ "--theme": plan.color } as any} class="plan-page">
 
-    <A href="/" class="back-to-hub">← Back to Hub</A>
+    <a href="${base}" class="back-to-hub">← Back to Hub</a>
 
     <h1>{plan.title}</h1>
     <p class="subtitle">
