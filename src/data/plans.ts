@@ -1098,18 +1098,18 @@ export const plans: Record<string, MealPlan> = {
     styles: ["Asian", "Mediterranean", "Thai", "American"],
     recipeCount: 4,
     maxMinutes: 30,
-    estTotalLow: 17.95,
-    estTotalHigh: 28.65,
+    estTotalLow: 30.95,
+    estTotalHigh: 48.65,
     overview: "Omega-3 rich. Four different meals with salmon as the protein base: a teriyaki bowl, a Mediterranean bake, a Thai stir-fry, and a simple grilled fillet. Cook for two (leftover). Pantry staples assumed on hand: oil, salt, pepper, soy sauce, sesame oil, garlic, cumin, smoked paprika, chili powder, dried oregano, red pepper flakes, curry powder, garam masala.",
     color: "#3b82f6",
     shopping: {
       produce: ["1 bunch broccoli (or 1 large head)", "1 bell pepper (any color)", "1 small onion", "2 cloves garlic", "1 lime", "Fresh ginger — 1 inch piece"],
-      protein: ["Salmon fillets — 2 (6 oz each)"],
+      protein: ["Salmon fillets — 4 (6 oz each)"],
       pantry: ["Rice — 1 lb bag", "Lemon — 1 (for the Mediterranean bake)"],
       dairy: ["Feta cheese (optional) — 2 oz"]
     },
     priceItems: [
-      { item: "Salmon fillets (2, 6 oz each)", qty: "2", low: 13.00, high: 20.00 },
+      { item: "Salmon fillets (4, 6 oz each)", qty: "4", low: 26.00, high: 40.00 },
       { item: "Broccoli", qty: "1 bunch", low: 1.50, high: 2.50 },
       { item: "Bell pepper", qty: "1", low: 1.00, high: 1.50 },
       { item: "Onion", qty: "1", low: 0.50, high: 0.75 },
@@ -1122,7 +1122,7 @@ export const plans: Record<string, MealPlan> = {
       {
         emoji: "🍚", name: "Salmon Teriyaki Bowl", style: "Asian", time: 20, cal: 650, servings: 2,
         ingredients: ["1 salmon fillet (6 oz)", "Broccoli florets — 1 cup", "Soy sauce — 2 tbsp", "Sesame oil — 1 tsp", "Ginger, minced — 1 tsp", "Garlic, minced — 1 clove", "Cooked rice — 1 cup"],
-        leftovers: ["1 salmon fillet", "Half the broccoli, bell pepper, onion", "1 clove garlic", "1 lime", "1 inch ginger"],
+        leftovers: ["3 salmon fillets", "Half the broccoli, bell pepper, onion", "1 clove garlic", "1 lime", "1 inch ginger"],
         instructions: [
           "Sear salmon skin-side down in a hot pan with sesame oil 4–5 minutes.",
           "Flip; add soy sauce, ginger, garlic to the pan and simmer 2–3 minutes.",
@@ -1133,7 +1133,7 @@ export const plans: Record<string, MealPlan> = {
       {
         emoji: "🫒", name: "Mediterranean Salmon Bake", style: "Mediterranean", time: 20, cal: 580, servings: 2,
         ingredients: ["1 salmon fillet (6 oz)", "Bell pepper, diced", "Onion, diced", "Lemon juice — 1 tbsp", "Olive oil — 1 tbsp", "Feta cheese (optional) — 2 oz"],
-        leftovers: ["None — all salmon used up."],
+        leftovers: ["2 salmon fillets"],
         instructions: [
           "Toss pepper and onion with olive oil, salt, and pepper.",
           "Place salmon on a baking sheet; surround with veggies.",
@@ -1144,7 +1144,7 @@ export const plans: Record<string, MealPlan> = {
       {
         emoji: "🥢", name: "Thai-Style Salmon Stir-Fry", style: "Thai / Asian", time: 15, cal: 520, servings: 2,
         ingredients: ["1 salmon fillet (6 oz), cut into chunks", "Bell pepper, sliced", "Onion, sliced", "Soy sauce — 1 tbsp", "Lime juice — 1 tsp", "Sesame oil — 1 tsp"],
-        leftovers: ["1 lime", "Remaining broccoli, bell pepper, onion"],
+        leftovers: ["1 salmon fillet", "1 lime", "Remaining broccoli, bell pepper, onion"],
         instructions: [
           "Heat sesame oil in a wok or pan; stir-fry pepper and onion 3–4 minutes.",
           "Add salmon chunks; cook 3–4 minutes until just opaque.",
@@ -1163,7 +1163,7 @@ export const plans: Record<string, MealPlan> = {
       }
     ],
     usage: [
-      { item: "Salmon (2 fillets, 6 oz each)", desc: "one per recipe — all used up ✓" },
+      { item: "Salmon (4 fillets, 6 oz each)", desc: "one per recipe × 4 = 24 oz — all used up ✓" },
       { item: "Broccoli", desc: "used in the teriyaki bowl; remainder available for other uses" },
       { item: "Bell pepper", desc: "half in the Mediterranean bake, half in the Thai stir-fry" },
       { item: "Onion", desc: "half in the Mediterranean bake, half in the Thai stir-fry" },
@@ -1172,8 +1172,8 @@ export const plans: Record<string, MealPlan> = {
       { item: "Lemon", desc: "used in the Mediterranean bake" }
     ],
     scaling: {
-      low: 1.65,
-      high: 2.65,
+      low: 3.87,
+      high: 6.08,
       tips: [
         "Frozen salmon fillets: often just as fresh, 20–30% cheaper. Look for wild-caught at Costco/Sam's.",
         "Rice: 5–7 lb bag (~$3–4) lasts months.",
