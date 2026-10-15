@@ -39,22 +39,23 @@ if (!plan) {
     </div>
 
     <h2>Shopping List</h2>
+    <p style="font-size:.9rem;color:#666;margin-bottom:1rem;">Click items to strike them through.</p>
     <div class="shopping-section">
       <h3>Produce</h3>
-      <ul>{plan.shopping.produce.map(item => <li>{item}</li>)}</ul>
+      <ul class="interactive-checklist">{plan.shopping.produce.map(item => <li><input type="checkbox" /> <span>{item}</span></li>)}</ul>
     </div>
     <div class="shopping-section">
       <h3>Protein</h3>
-      <ul>{plan.shopping.protein.map(item => <li>{item}</li>)}</ul>
+      <ul class="interactive-checklist">{plan.shopping.protein.map(item => <li><input type="checkbox" /> <span>{item}</span></li>)}</ul>
     </div>
     <div class="shopping-section">
       <h3>Pantry (buy if needed)</h3>
-      <ul>{plan.shopping.pantry.map(item => <li>{item}</li>)}</ul>
+      <ul class="interactive-checklist">{plan.shopping.pantry.map(item => <li><input type="checkbox" /> <span>{item}</span></li>)}</ul>
     </div>
     {plan.shopping.dairy.length > 0 && (
       <div class="shopping-section">
         <h3>Dairy / Extras</h3>
-        <ul>{plan.shopping.dairy.map(item => <li>{item}</li>)}</ul>
+        <ul class="interactive-checklist">{plan.shopping.dairy.map(item => <li><input type="checkbox" /> <span>{item}</span></li>)}</ul>
       </div>
     )}
 
@@ -119,22 +120,6 @@ if (!plan) {
     <ul style="padding-left:1.5rem;line-height:2;">
       <li><strong>Effective cost per actual meal (2 servings):</strong> ~${plan.scaling.low}–~${plan.scaling.high}/meal.</li>
       {plan.scaling.tips.map(tip => <li>{tip}</li>)}
-    </ul>
-
-    <h2>Shopping Checklist</h2>
-    <ul class="interactive-checklist" id="checklist">
-      {plan.shopping.produce.map(item => (
-        <li><input type="checkbox" /> <span>{item}</span></li>
-      ))}
-      {plan.shopping.protein.map(item => (
-        <li><input type="checkbox" /> <span>{item}</span></li>
-      ))}
-      {plan.shopping.pantry.map(item => (
-        <li><input type="checkbox" /> <span>{item}</span></li>
-      ))}
-      {plan.shopping.dairy.map(item => (
-        <li><input type="checkbox" /> <span>{item}</span></li>
-      ))}
     </ul>
 
     <script>
