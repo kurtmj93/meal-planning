@@ -1287,5 +1287,115 @@ export const plans: Record<string, MealPlan> = {
       ]
     },
     bestFor: "Highest fiber, all-starch base"
+  },
+
+  "sausage-peppers": {
+    slug: "sausage-peppers",
+    title: "Sausage & Peppers",
+    emoji: "🌭",
+    protein: "Italian sausage",
+    styles: ["Italian", "Asian", "Mexican", "Mediterranean"],
+    recipeCount: 4,
+    maxMinutes: 25,
+    estTotalLow: 20.10,
+    estTotalHigh: 39.00,
+    overview: "Pre-seasoned and versatile. Four different meals with Italian sausage as the protein base: a pasta dish, Korean-style rice bowls, Mexican bowls, and a Mediterranean skillet. Cook for two (leftover). Italian sausage is already seasoned with fennel, garlic, and pepper — it works in any cuisine. Costco's Kirkland Signature 3.5 lb pack (~$3/lb) is the best deal. Pantry staples assumed on hand: oil, salt, pepper, soy sauce, and sesame oil.",
+    color: "#e11d48",
+    shopping: {
+      produce: ["3 bell peppers (mixed colors)", "2 large onions", "1 head garlic", "1 bunch scallions (green onions)"],
+      protein: ["2.5 lbs Italian sausage (mild or hot)"],
+      pantry: ["1 lb pasta (penne, rotini, or any shape)", "Rice (1 lb bag if needed)", "1 can (15 oz) white beans (cannellini or navy)", "1 can (15 oz) black beans", "2 cans (14.5 oz) diced tomatoes", "1 bag (16 oz) frozen corn"],
+      dairy: []
+    },
+    priceItems: [
+      { item: "Italian sausage (2.5 lbs)", qty: "2.5 lbs", low: 7.50, high: 17.50 },
+      { item: "Bell peppers (3 mixed)", qty: "3", low: 3.00, high: 4.50 },
+      { item: "Large onions (2)", qty: "2", low: 1.50, high: 2.50 },
+      { item: "Garlic head", qty: "1", low: 0.50, high: 0.75 },
+      { item: "Scallions", qty: "1 bunch", low: 0.50, high: 0.75 },
+      { item: "Pasta (1 lb)", qty: "1 lb", low: 1.00, high: 2.00 },
+      { item: "Rice (if needed)", qty: "1 lb bag", low: 1.00, high: 2.00 },
+      { item: "White beans", qty: "1 can (15 oz)", low: 0.80, high: 1.50 },
+      { item: "Black beans", qty: "1 can (15 oz)", low: 0.80, high: 1.50 },
+      { item: "Diced tomatoes", qty: "2 cans (14.5 oz)", low: 2.00, high: 3.50 },
+      { item: "Frozen corn", qty: "16 oz bag", low: 1.50, high: 2.50 }
+    ],
+    recipes: [
+      {
+        emoji: "🍝", name: "Sausage & White Bean Pasta", style: "Italian", time: 25, cal: 720, servings: 2,
+        ingredients: ["¾ lb Italian sausage, casings removed", "8 oz pasta", "1 can white beans, rinsed", "½ onion, diced", "2 cloves garlic, minced", "1 can diced tomatoes (14.5 oz)", "1 tbsp olive oil", "Red pepper flakes, to taste", "Salt, pepper"],
+        leftovers: ["1¼ lbs sausage", "2 bell peppers", "Remaining onion", "Remaining rice", "Remaining black beans", "Remaining corn"],
+        instructions: [
+          "Cook pasta according to package directions. Reserve ½ cup pasta water, then drain.",
+          "While pasta cooks, heat olive oil in a skillet over medium-high heat. Remove sausage from casings and brown, breaking into small pieces, 6–8 min.",
+          "Add onion; cook 3 min until soft.",
+          "Add garlic; cook 30 seconds.",
+          "Pour in diced tomatoes (with juice). Simmer 5 min.",
+          "Stir in white beans and red pepper flakes; cook 2 min.",
+          "Toss pasta into the sauce. Add pasta water if needed to loosen. Serve."
+        ]
+      },
+      {
+        emoji: "🥡", name: "Korean Sausage & Rice Bowls", style: "Asian", time: 20, cal: 640, servings: 2,
+        ingredients: ["¾ lb Italian sausage, sliced into coins", "2 cups cooked rice", "1 bell pepper, sliced", "½ onion, sliced", "2 cloves garlic, minced", "3 tbsp soy sauce", "1 tsp sesame oil", "2 tbsp olive oil", "2 scallions, sliced (garnish)", "Red pepper flakes, to taste"],
+        leftovers: ["1¼ lbs sausage", "2 bell peppers", "Remaining onion", "Remaining rice", "Remaining white beans", "Remaining diced tomatoes", "Remaining corn"],
+        instructions: [
+          "Cook rice if not already done (use ¾ cup uncooked → yields ~2 cups cooked).",
+          "Heat 1 tbsp oil in a wok or large skillet over high heat.",
+          "Add sausage coins; sear 4–5 min until browned on edges.",
+          "Add bell pepper and onion; stir-fry 3 min until crisp-tender.",
+          "Add garlic; cook 30 seconds.",
+          "Drizzle soy sauce and sesame oil; toss to coat.",
+          "Serve over rice. Top with sliced scallions and red pepper flakes."
+        ]
+      },
+      {
+        emoji: "🌮", name: "Mexican Sausage & Rice Bowls", style: "Mexican", time: 20, cal: 680, servings: 2,
+        ingredients: ["¾ lb Italian sausage, sliced", "1½ cups cooked rice", "½ can black beans, rinsed", "1 cup frozen corn", "½ bell pepper, diced", "½ onion, diced", "2 cloves garlic, minced", "1 tsp cumin", "1 tsp smoked paprika", "1 tbsp olive oil", "Salt, pepper"],
+        leftovers: ["1¼ lbs sausage", "2 bell peppers", "Remaining onion", "Remaining rice", "Remaining white beans", "Remaining diced tomatoes"],
+        instructions: [
+          "Cook rice if not already done (from the Korean bowl batch).",
+          "Heat olive oil in a skillet over medium-high heat. Brown sausage, slicing into coins, 5–6 min.",
+          "Add onion and bell pepper; cook 3 min until softened.",
+          "Add garlic, cumin, and paprika; cook 30 seconds.",
+          "Stir in black beans and corn; cook 3 min until heated through.",
+          "Serve over rice."
+        ]
+      },
+      {
+        emoji: "🫕", name: "Mediterranean Sausage & Pepper Skillet", style: "Mediterranean", time: 20, cal: 620, servings: 2,
+        ingredients: ["½ lb Italian sausage, sliced", "1 bell pepper, diced", "¼ onion, diced", "2 cloves garlic, minced", "1 tsp dried oregano", "1 tsp smoked paprika", "1 tbsp olive oil", "½ can diced tomatoes (14.5 oz)", "2 cups cooked rice", "Scallions, sliced (garnish)", "Salt, pepper"],
+        leftovers: ["1¾ lbs sausage", "Remaining bell peppers", "Remaining onion", "Remaining rice", "Remaining black beans", "Remaining corn", "Remaining white beans"],
+        instructions: [
+          "Heat olive oil in a skillet over medium-high heat.",
+          "Add sausage slices; cook 5–6 min until browned.",
+          "Add onion and bell pepper; cook 3 min.",
+          "Add garlic, oregano, and paprika; cook 30 seconds.",
+          "Pour in diced tomatoes (with juice). Simmer 5 min.",
+          "Serve over rice. Top with scallions."
+        ]
+      }
+    ],
+    usage: [
+      { item: "Italian sausage (2 lbs)", desc: "¾ + ¾ + ¾ + ½ = 2.75 lbs → buy 2 lbs, slight shortfall (buy 2.5 lbs instead)" },
+      { item: "Bell peppers (3)", desc: "1 + ½ + ½ + 1 = 2.5 → buy 3, use them all" },
+      { item: "Onion (1 large)", desc: "½ + ½ + ½ + ¼ = 1.75 → buy 2, ½ leftover" },
+      { item: "Rice", desc: "Cook 3 cups uncooked → yields ~9 cups. Use ~5.5 cups across recipes, plenty leftover" },
+      { item: "Pasta (1 lb)", desc: "used only in Italian pasta dish" },
+      { item: "White beans (1 can)", desc: "used only in Italian pasta dish" },
+      { item: "Black beans (1 can)", desc: "½ can for Mexican bowl, ½ can leftover" },
+      { item: "Diced tomatoes (2 cans)", desc: "1 can (Italian) + ½ can (Mediterranean) = 1.5 cans → buy 2, ½ leftover" },
+      { item: "Corn (1 bag)", desc: "used only in Mexican bowl, rest leftover" }
+    ],
+    scaling: {
+      low: 2.51,
+      high: 4.88,
+      tips: [
+        "Italian sausage: Kirkland Signature at Costco (3.5 lb for ~$11) is the best deal — ~$3.11/lb. That's 4× the amount this plan needs.",
+        "Buy 2.5 lbs sausage instead of 2 lbs to cover the usage shortfall.",
+        "Diced tomatoes: buy 2 cans since the plan uses 1.5 cans total."
+      ]
+    },
+    bestFor: "Pre-seasoned protein, minimal prep"
   }
 };
