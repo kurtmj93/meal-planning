@@ -1,16 +1,96 @@
 ---
+import Base from '../layouts/Base.astro';
+import { plans } from '../data/plans';
+
+const slugList = Object.keys(plans);
+const allPlans = slugList.map(slug => plans[slug]);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base>
+  <title slot="head">Quick &amp; Cheap Meals — Hub</title>
+
+  <h1>Quick &amp; Cheap Meals</h1>
+  <p class="subtitle">{allPlans.length} repeatable meal plans · each uses overlapping ingredients · 3–4 recipes per plan · serves 2</p>
+
+  <h2>Choose a Plan</h2>
+  {allPlans.map(plan => {
+    const psLow = plan.estTotalLow / (plan.recipeCount * 2);
+    const psHigh = plan.estTotalHigh / (plan.recipeCount * 2);
+    return (
+      <div class="plan-card">
+        <div>
+          <a href={`/plans/${plan.slug}/`}>
+            {plan.emoji} {plan.title}
+          </a>
+          <div class="plan-meta">
+            {plan.protein} · {plan.styles.join(', ')}
+          </div>
+          <div class="plan-features">
+            <span class="plan-feature">{plan.recipeCount} styles</span>
+            <span class="plan-feature">~${Math.round(plan.estTotalLow)}–${Math.round(plan.estTotalHigh)}</span>
+            <span class="plan-feature">≤{plan.maxMinutes} min each</span>
+          </div>
+        </div>
+        <div class="plan-price">
+          ~${psLow.toFixed(2)}–${psHigh.toFixed(2)}/serving
+        </div>
+      </div>
+    );
+  })}
+
+  <hr class="section-divider" />
+
+  <h2>Side-by-Side Comparison</h2>
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Plan</th>
+        <th>Protein</th>
+        <th>Styles</th>
+        <th>Est. Total</th>
+        <th>Per Serving</th>
+        <th>Best For</th>
+      </tr>
+    </thead>
+    <tbody>
+      {allPlans.map((plan) => {
+        const psLow = plan.estTotalLow / (plan.recipeCount * 2);
+        const psHigh = plan.estTotalHigh / (plan.recipeCount * 2);
+        const isBest = plan.slug === 'pasta-veggie';
+        return (
+          <tr class:best={isBest}>
+            <td><a href={`/plans/${plan.slug}/`}>{plan.title}</a></td>
+            <td>{plan.protein}</td>
+            <td>{plan.styles.join(', ')}</td>
+            <td class:best={isBest}>~${Math.round(plan.estTotalLow)}–${Math.round(plan.estTotalHigh)}</td>
+            <td class:best={isBest}>~${psLow.toFixed(2)}–${psHigh.toFixed(2)}</td>
+            <td class:best={isBest}>{plan.bestFor}</td>
+          </tr>
+        );
+      })}
+    </tbody>
+  </table>
+
+  <hr class="section-divider" />
+
+  <h2>How to Use These Plans</h2>
+  <ol style="padding-left:1.5rem;line-height:2;">
+    <li><strong>Pick a plan</strong> that matches what you want to eat and what you already have in your pantry.</li>
+    <li><strong>Go shopping.</strong> Use the printable checklist at the bottom of each plan.</li>
+    <li><strong>Cook one recipe per day</strong> (or however you like). Each makes 2 servings — one for now, one for later.</li>
+    <li><strong>Rotate plans weekly</strong> for variety. All plans use similar ingredient categories (rice, beans, canned goods, produce) so you can buy in bulk across plans.</li>
+    <li><strong>Scale up</strong> by adding more rice. It's ~$0.15/cup cooked and adds ~200 calories per cup.</li>
+  </ol>
+
+  <hr class="section-divider" />
+
+  <h2>Bulk Buying Tips (Apply to All Plans)</h2>
+  <ul style="padding-left:1.5rem;line-height:2;">
+    <li><strong>Chicken:</strong> Buy 4–5 lb trays from Costco/Sam's ($1.50–2/lb vs $2.50–3.50 retail). Freeze in ½ lb portions.</li>
+    <li><strong>Rice:</strong> 5–7 lb bag (~$3–4) lasts months. Cost: ~$0.40/lb vs $1–2/lb for small bags.</li>
+    <li><strong>Cheese:</strong> Buy blocks, shred yourself. Pre-shredded costs 20–30% more.</li>
+    <li><strong>Canned goods:</strong> Store brands (Great Value, Kirkland, Member's Mark) are identical to name brands.</li>
+    <li><strong>Produce:</strong> Onions in 3 lb bags (~$2), peppers in 3–4 packs (~$1 each at warehouse stores).</li>
+    <li><strong>Tuna:</strong> 12-packs at Costco/Sam's ($5–7 vs $7–10 retail).</li>
+  </ul>
+</Base>

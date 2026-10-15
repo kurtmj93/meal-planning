@@ -1,43 +1,62 @@
-# Astro Starter Kit: Minimal
+# Quick & Cheap Meal Plans
 
-```sh
-npm create astro@latest -- --template minimal
+A single-source-of-truth Astro site for 13 budget-friendly meal plans. Each plan uses overlapping ingredients across 3–4 recipes, serving 2 (one meal now, one leftover later).
+
+## Features
+
+- **13 meal plans** with full recipes, shopping lists, price estimates, and scaling info
+- **Single data source** (`src/data/plans.ts`) — no more drift between hub and plan pages
+- **Interactive shopping checklists** — click to strike through items
+- **Print-friendly** — CSS handles print styles automatically
+- **Theme-colored** — each plan has its own color for the back-to-hub button and accents
+- **Responsive** — works on mobile and desktop
+
+## Structure
+
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
+meal-plan-astro/
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── data/plans.ts          ← Single source of truth for all plan data
+│   ├── types/plans.ts         ← TypeScript interfaces
+│   ├── layouts/Base.astro     ← Shared HTML shell
+│   ├── styles/global.css      ← All shared styles
+│   ├── pages/
+│   │   ├── index.astro        ← Hub page
+│   │   └── plans/[slug].astro ← Plan detail page (13 pages generated)
+├── public/
+│   ├── favicon.svg
+│   └── favicon.ico
+├── astro.config.mjs
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Development
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```bash
+npm install
+npm run dev      # Start dev server at http://localhost:4321
+npm run build    # Build to dist/
+npm run preview  # Preview production build
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Deployment
 
-## 🧞 Commands
+### GitHub Pages
 
-All commands are run from the root of the project, from a terminal:
+1. Push this repo to GitHub
+2. Go to Settings → Pages → Source: Deploy from a branch
+3. Select `main` branch and `/ (root)`
+4. The site will be available at `https://<username>.github.io/<repo>/`
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+### Netlify / Vercel
 
-## 👀 Want to learn more?
+Connect the repo and deploy. Astro generates static HTML that works on any static host.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Data
+
+All plan data lives in `src/data/plans.ts`. Each plan has:
+- Shopping list (produce, protein, pantry, dairy)
+- Price items with low/high estimates
+- 3–4 recipes with ingredients, leftovers, instructions, and calorie estimates
+- Ingredient usage tracker
+- Scaling info with cost per meal

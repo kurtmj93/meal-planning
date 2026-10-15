@@ -1,0 +1,152 @@
+/* ============================================
+   Meal Plan Website - Shared Styles
+   ============================================ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem;
+  color: #1a1a1a; background: #fafafa;
+  line-height: 1.6;
+}
+
+h1 { font-size: 2rem; margin-bottom: .25rem; }
+h2 { font-size: 1.5rem; margin: 2.5rem 0 .75rem; }
+h3 { font-size: 1.2rem; margin: 2rem 0 .5rem; }
+.subtitle { color: #666; margin-bottom: 2rem; font-size: 1.05rem; }
+
+/* Overview Box */
+.overview {
+  padding: 1.25rem 1.5rem; border-radius: 6px; margin-bottom: 2.5rem;
+  border-left: 4px solid;
+}
+.overview h2 { font-size: 1.15rem; margin-bottom: .5rem; }
+.overview ul { padding-left: 1.25rem; }
+.overview li { margin-bottom: .35rem; line-height: 1.5; }
+
+/* Shopping Sections */
+.shopping-section { margin-bottom: 1rem; }
+.shopping-section h3 { margin-bottom: .5rem; }
+.shopping-section ul { padding-left: 1.5rem; }
+.shopping-section li { margin-bottom: .3rem; line-height: 1.5; }
+
+/* Recipe Cards */
+.recipe-card {
+  background: #fff; border: 1px solid #e0e0e0; border-radius: 10px;
+  padding: 1.75rem; margin-bottom: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+.recipe-card h3 { margin-top: 0; }
+
+/* Tags */
+.tags { display: flex; gap: .5rem; margin-bottom: .75rem; flex-wrap: wrap; }
+.tag {
+  font-size: .75rem; padding: .2rem .65rem; border-radius: 999px;
+  font-weight: 600; text-transform: uppercase; letter-spacing: .03em;
+}
+.tag.time { background: #fef3c7; color: #92400e; }
+.tag.style { background: #dbeafe; color: #1e40af; }
+.tag.yield { background: #d1fae5; color: #065f46; }
+.tag.cal { background: #ede9fe; color: #5b21b6; }
+
+/* Ingredients Grid */
+.ingredients-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2rem;
+  margin-bottom: 1.25rem;
+}
+.ingredients-grid h4 { font-size: .95rem; color: #555; margin-bottom: .35rem; }
+.ingredients-grid ul { padding-left: 1.25rem; }
+.ingredients-grid li { margin-bottom: .2rem; line-height: 1.5; font-size: .93rem; }
+
+/* Instructions */
+.instructions ol { padding-left: 1.25rem; }
+.instructions li { margin-bottom: .5rem; line-height: 1.6; }
+
+/* Price Table */
+.price-table { width: 100%; border-collapse: collapse; font-size: .93rem; margin-bottom: 1rem; }
+.price-table th { text-align: left; padding: .5rem .75rem; font-weight: 600; border-bottom: 2px solid #e5e7eb; }
+.price-table td { padding: .45rem .75rem; border-bottom: 1px solid #f0f0f0; }
+.price-table .total-row { font-weight: 700; border-bottom: 2px solid #e5e7eb; padding: .6rem .75rem; }
+
+/* Interactive Checklist */
+.interactive-checklist { list-style: none; padding-left: 0; }
+.interactive-checklist li {
+  padding: .5rem 0; border-bottom: 1px solid #f0f0f0;
+  display: flex; align-items: center; gap: .75rem;
+  transition: color .2s, text-decoration .2s;
+}
+.interactive-checklist li.checked {
+  color: #999;
+  text-decoration: line-through;
+}
+.interactive-checklist input[type="checkbox"] {
+  width: 1.1rem; height: 1.1rem; cursor: pointer;
+}
+
+/* Plan page wrapper for theme colors */
+.plan-page {
+  --theme: #3b82f6;
+}
+
+/* Back to Hub Button */
+.back-to-hub {
+  position: fixed; top: 2rem; left: 2rem;
+  padding: .75rem 1.25rem;
+  border: none; border-radius: 8px;
+  font-size: .9rem; cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  z-index: 1000; text-decoration: none;
+  color: #fff;
+  background: var(--theme);
+  transition: background .2s;
+}
+.back-to-hub:hover { opacity: .9; }
+
+/* Print Styles */
+@media print {
+  body { background: #fff; }
+  .recipe-card { box-shadow: none; break-inside: avoid; }
+  .back-to-hub, .interactive-checklist input[type="checkbox"] { display: none !important; }
+  .interactive-checklist li::before { content: "☐ "; font-size: 1.2rem; }
+}
+
+/* ============================================
+   Hub Page Styles
+   ============================================ */
+
+.plan-card {
+  background: #fff; border: 1px solid #e0e0e0; border-radius: 10px;
+  padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.plan-card a {
+  color: #1a1a1a; text-decoration: none; font-size: 1.3rem; font-weight: 600;
+}
+.plan-card a:hover { color: #3b82f6; }
+.plan-meta { color: #666; font-size: .9rem; margin-top: .25rem; }
+.plan-price {
+  background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px;
+  padding: .5rem 1rem; font-weight: 600; color: #065f46; white-space: nowrap;
+}
+.plan-features {
+  display: flex; gap: .5rem; margin-top: .5rem; flex-wrap: wrap;
+}
+.plan-feature {
+  font-size: .75rem; padding: .2rem .5rem; border-radius: 999px;
+  background: #f3f4f6; color: #4b5563;
+}
+.comparison-table {
+  width: 100%; border-collapse: collapse; font-size: .93rem; margin: 1.5rem 0;
+}
+.comparison-table th {
+  text-align: left; padding: .5rem .75rem; font-weight: 600;
+  border-bottom: 2px solid #e5e7eb;
+}
+.comparison-table td {
+  padding: .5rem .75rem; border-bottom: 1px solid #f0f0f0;
+}
+.comparison-table tr:last-child td { font-weight: 700; border-bottom: 2px solid #e5e7eb; }
+.comparison-table .best { color: #065f46; font-weight: 600; }
+.section-divider {
+  border: none; border-top: 2px solid #e5e7eb; margin: 2.5rem 0;
+}
