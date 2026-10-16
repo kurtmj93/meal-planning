@@ -122,17 +122,81 @@ When designing a plan:
 
 ## Price Estimation Guidelines
 
-Use approximate US averages (mid-2026 BLS/USDA data):
+### Vendor-Specific Pricing (Richmond, VA area)
+
+These are current approximate prices as of October 2026. Aldi consistently has the lowest prices on staples. Costco offers the best per-unit value on bulk protein. Lidl and Food Lion fall in between.
+
+| Item | Aldi | Lidl | Food Lion | Costco (Richmond, VA) |
+|---|---|---|---|---|
+| Chicken thighs (boneless, skinless, per lb) | $2.99 | ~$2.50–3.50 | ~$2.75–3.79 | $2.99 (Kirkland air-chilled) |
+| Ground beef (80/20, per lb) | $5.29 | ~$5.69 | ~$4.99–5.49 | $4.69–4.99 (Kirkland vacuum) |
+| Ground pork (per lb) | ~$3.50–4.00 | ~$3.50–4.50 | ~$4.00–5.00 | — |
+| Bacon (per lb) | ~$4.99–5.99 | ~$4.00–5.00 | ~$4.99–5.99 | ~$4.92 (Kirkland thick sliced) |
+| Frozen shrimp (raw, per lb) | ~$3.50–7.00 | ~$9.00 | ~$8.00–9.00 | ~$8.29 (Kirkland 2 lb) |
+| Italian sausage (per lb) | ~$2.99 | ~$3.50–4.50 | ~$3.50–4.50 | ~$3.10 (Kirkland 3.5 lb) |
+| Eggs (dozen) | $1.85 (Goldhen) | ~$1.86 | ~$2.50–3.00 | ~$3.00 (24 ct $6.00) |
+| Bell peppers (each) | ~$1.25–1.50 | ~$1.00–1.50 | ~$1.00–1.50 | ~$1.50–2.00 |
+| Onion (each) | ~$0.50–0.75 | ~$0.50–0.75 | ~$0.50–0.75 | ~$0.75–1.00 |
+| Garlic (per head) | ~$0.50–0.75 | ~$0.50–0.75 | ~$0.50–0.75 | ~$0.75–1.00 |
+| Rice (1 lb bag) | ~$1.00–1.50 | ~$1.00–1.50 | ~$1.50–2.00 | ~$1.50–2.00 |
+| Canned beans (15 oz) | ~$0.75–1.25 | ~$0.80–1.50 | ~$0.80–1.50 | ~$1.00–1.50 |
+| Canned tomatoes (14.5 oz) | ~$0.99–1.25 | ~$1.00–1.50 | ~$1.00–1.75 | ~$1.25–1.50 |
+| Tortillas (8–10 pack) | ~$1.50–2.00 | ~$1.50–2.50 | ~$1.50–2.50 | ~$2.00–3.00 |
+| Cheese (8 oz block) | ~$2.00–2.50 | ~$2.00–3.00 | ~$2.50–3.50 | ~$3.00–4.00 |
+| Frozen mixed veggies (16 oz) | ~$1.25–1.75 | ~$1.50–2.00 | ~$1.50–2.50 | ~$1.50–2.00 |
+| Sweet potato (each) | ~$0.75–1.25 | ~$0.75–1.25 | ~$0.75–1.25 | ~$1.00–1.50 |
+| Scallions (bunch) | ~$0.50–0.75 | ~$0.50–0.75 | ~$0.50–0.75 | ~$0.75–1.00 |
+| Fresh herbs (bunch) | ~$0.75–1.25 | ~$0.75–1.25 | ~$0.75–1.25 | ~$1.00–1.50 |
+| Limes (each) | ~$0.25–0.50 | ~$0.25–0.50 | ~$0.25–0.50 | ~$0.50–0.75 |
+| Firm tofu (14 oz block) | ~$1.25–1.75 | ~$1.50–2.00 | ~$2.00–2.50 | ~$2.00–2.50 |
+| Deli turkey (per lb) | ~$4.00–5.00 | ~$4.00–5.50 | ~$4.00–5.50 | ~$5.00–6.00 |
+| Frozen white fish (per lb) | ~$6.89–8.99 | ~$5.00–7.00 | ~$5.00–7.00 | ~$5.00–7.00 |
+| Salmon fillets (per lb) | ~$11.95 | ~$8.00–10.00 | ~$9.00–12.00 | ~$9.00–11.00 |
+
+**Notes:**
+- `~` = approximate, based on vendor positioning and available data
+- Prices are for standard/conventional items unless noted
+- Costco prices reflect Kirkland Signature or in-house brands
+- Aldi's Kirkwood brand chicken thighs are ~$2.29/lb (conventional bone-in); boneless/skinless USDA Family Pack is $2.99/lb
+- BLS national average for ground beef (Oct 2026): ~$6.79/lb — Costco at $4.69–4.99 is significantly below
+- BLS national average for eggs: ~$2.27/doz — Aldi at $1.85 is the best deal
+- BLS national average for boneless skinless chicken thighs: ~$3.26/lb
+- Costco's standard retail ground beef is now 88/12 (~6.3 lb box @ $6.80/lb, Oct 2026). The $4.69–4.99 range applies to 80/20 vacuum packs — verify locally.
+
+### Minimum Package Sizes (October 2026)
+
+The smallest purchasable unit of each protein at each vendor — the real floor for any bulk buy. Per-lb math is meaningless if the package doesn't match what the plan needs.
+
+| Item | Aldi | Lidl | Food Lion | Costco |
+|---|---|---|---|---|
+| Chicken thighs (boneless, skinless) | ~2.75 lb family-pack tray ($8.22 @ $2.99/lb); Kirkwood ~1.85 lb @ $3.59; One Fine Chicken ~3 lb @ $2.49 | Not confirmed in US | Sold by weight; family-pack tray ~3.25 lb @ $3.69–3.79/lb | Sold by weight in tear-off pouches; tray ~8.5 lb (~$18–24) |
+| Ground beef (80/20) | ~2.25 lb box ($11.90 @ $5.29/lb) | 2 lb (907 g) tray; $11.45–13.39 ($5.73–6.69/lb) | ~1.1 lb tray @ $6.99/lb | Kirkland 88/12 ~6.3 lb box @ $6.80/lb (~$43); 80/20 seen at $4.69–4.99 |
+| Bacon | 16 oz @ $4.35 | — | ~1 lb packs | 2 × 1.5 lb = 3 lb @ $12.99 ($4.33/lb; recently down from $16.49) |
+| Italian sausage | 16 oz @ $3.55 | — | ~1 lb links | 3.5 lb @ $10.89 (~$3.11/lb) |
+| Frozen shrimp | — | ~$9/lb (15/20 packs) | — | 2 lb or 4 lb Kirkland packages |
+
+**Key facts for multiweek planning:**
+- Retail protein floors are ~1.85–2.75 lb per buy (Aldi boxes, Lidl 2 lb trays, Food Lion ~3.25 lb thigh trays) — current plans' 2.5 lb buys sit right at that floor, so existing single-protein plans are viable at any of the four vendors
+- Costco boxes are the scale driver: one box/tray of each protein ≈ 6–16 meals' worth (6.3 lb beef box, 8.5 lb chicken tray, 3 lb bacon, 3.5 lb sausage)
+- Aldi's 2.25 lb 80/20 box ($5.29/lb) undercuts Costco's 88/12 ($6.80/lb): 3 Aldi boxes = 6.75 lb ~$36 vs 1 Costco box = 6.3 lb ~$43 — but Costco wins on trip consolidation
+- Chicken thighs are sold by the pound at every vendor (trays just happen to be 2–3.25 lb retail, ~8.5 lb at Costco), so plan sizing can be exact pounds; Costco pouches are pre-portioned ~6–8 oz
+
+### Retail Price Ranges (Quick Reference)
+
+Use these when you need a ballpark for any vendor:
 
 | Item | Price Range |
 |---|---|
 | Chicken thighs (boneless, per lb) | $2.50–$3.50 |
 | Ground beef (per lb) | $3.50–$5.50 |
 | Ground pork (per lb) | $3.00–$4.50 |
+| Bacon (per lb) | $4.00–$6.00 |
+| Frozen shrimp (per lb) | $7.00–$10.00 |
+| Italian sausage (per lb) | $3.00–$4.50 |
+| Eggs (dozen) | $2.00–$3.50 |
 | Bell peppers (each) | $1.00–$1.50 |
 | Onion (each) | $0.50–$0.75 |
 | Garlic (per head) | $0.50–$0.75 |
-| Eggs (dozen) | $2.00–$3.50 |
 | Rice (1 lb bag) | $1.00–$2.00 |
 | Canned beans (15 oz) | $0.80–$1.50 |
 | Canned tomatoes (14.5 oz) | $1.00–$1.75 |
@@ -148,7 +212,7 @@ Use approximate US averages (mid-2026 BLS/USDA data):
 | Firm tofu (14 oz block) | $1.25–$1.75 |
 | Deli turkey (per lb) | $3.50–$5.50 |
 | Salmon fillets (6 oz) | $6.50–$10.00 |
-| Ground pork (per lb) | $3.00–$4.50 |
+| Frozen white fish (per lb) | $5.00–7.00 |
 
 **Bulk buying** typically saves 20–40% on protein and 10–30% on pantry items.
 
@@ -159,13 +223,13 @@ Use approximate US averages (mid-2026 BLS/USDA data):
 ```
 ~/Dev/meal-plan-astro/
 ├── src/
-│   ├── data/plans.ts          ← Single source of truth — add new plans here
-│   ├── types/plans.ts         ← TypeScript interfaces
-│   ├── layouts/Base.astro     ← Shared HTML shell
-│   ├── styles/global.css      ← All shared styles
+│   ├── data/plans.ts            ← Single source of truth — add new plans here
+│   ├── types/plans.ts           ← TypeScript interfaces (MealPlan, Recipe, …)
+│   ├── layouts/Base.astro       ← Shared HTML shell
+│   ├── styles/global.css        ← All shared styles
 │   ├── pages/
-│   │   ├── index.astro        ← Hub page
-│   │   └── plans/[slug].astro ← Plan detail (auto-generated from data)
+│   │   ├── index.astro          ← Hub page (plans + comparison)
+│   │   ├── plans/[slug].astro   ← Plan detail (auto-generated from data)
 ├── public/
 │   ├── favicon.svg
 │   └── favicon.ico
@@ -176,8 +240,6 @@ Use approximate US averages (mid-2026 BLS/USDA data):
 To add a new plan:
 1. Add the plan object to `src/data/plans.ts` following the existing structure
 2. The plan page is auto-generated — no separate files needed
-
----
 
 ## Tone & Style
 
