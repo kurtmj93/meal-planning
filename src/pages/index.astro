@@ -1,9 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
 import { plans } from '../data/plans';
+import { multiweekPlans } from '../data/multiweek-plans';
 
 const slugList = Object.keys(plans);
 const allPlans = slugList.map(slug => plans[slug]);
+const multiweekAll = Object.values(multiweekPlans);
 const base = '/meal-planning/';
 ---
 
@@ -35,6 +37,30 @@ const base = '/meal-planning/';
         <div class="plan-price">
           ~${psLow.toFixed(2)}–${psHigh.toFixed(2)}/serving
         </div>
+      </div>
+    );
+  })}
+
+  <hr class="section-divider" />
+
+  <h2>Multiweek Plans</h2>
+  <p style="font-size:.9rem;color:#666;margin-bottom:1rem;">One bulk trip → 2–3 weeks of dinners, sized to real package sizes.</p>
+  {multiweekAll.map(plan => {
+    const servings = plan.plannedMeals * 2;
+    const psLow = plan.estTotalLow / servings;
+    const psHigh = plan.estTotalHigh / servings;
+    return (
+      <div class="plan-card">
+        <div>
+          <a href={`${base}multiweek/${plan.slug}/`}>{plan.emoji} {plan.title}</a>
+          <div class="plan-meta">{plan.proteins} · {plan.weeks} weeks · {plan.plannedMeals} fresh dinners + {plan.flexDays} flex days</div>
+          <div class="plan-features">
+            <span class="plan-feature">{plan.recipeCount} recipes</span>
+            <span class="plan-feature">~${Math.round(plan.estTotalLow)}–${Math.round(plan.estTotalHigh)} total</span>
+            <span class="plan-feature">1 bulk trip</span>
+          </div>
+        </div>
+        <div class="plan-price">~${psLow.toFixed(2)}–${psHigh.toFixed(2)}/serving</div>
       </div>
     );
   })}

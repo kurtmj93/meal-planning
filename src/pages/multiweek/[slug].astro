@@ -1,0 +1,156 @@
+---
+import Base from '../../layouts/Base.astro';
+import { multiweekPlans } from '../../data/multiweek-plans';
+
+export function getStaticPaths() {
+  return Object.keys(multiweekPlans).map(slug => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const plan = multiweekPlans[slug];
+const base = '/meal-planning/';
+
+if (!plan) {
+  Astro.redirect(base);
+}
+
+const servings = plan.plannedMeals * 2;
+const psLow = plan.estTotalLow / servings;
+const psHigh = plan.estTotalHigh / servings;
+const daysFor = (name: string) => plan.menu.filter(d => d.recipe === name).map(d => d.day);
+const cell = 'border:1px solid #e5e7eb;border-radius:.5rem;padding:.5rem;font-size:.78rem;line-height:1.3;';
+---
+
+<Base>
+  <title slot="head">{plan.title} — Multiweek Plan</title>
+
+  <div style={{ "--theme": plan.color } as any} class="plan-page">
+
+    <a href={base} class="back-to-hub">← Back to Hub</a>
+
+    <h1>{plan.emoji} {plan.title}</h1>
+    <p class="subtitle">
+      {plan.proteins} · {plan.weeks} weeks ({plan.durationDays} days) · {plan.plannedMeals} fresh dinners + {plan.flexDays} flex days · one bulk trip · ≤{plan.maxMinutes} min each
+    </p>
+
+    <div class="overview">
+      <p><strong>{plan.overview}</strong></p>
+    </div>
+
+    <div style="background:#f5f3ff;border-left:4px solid {plan.color};border-radius:.5rem;padding:1rem 1.25rem;margin-bottom:2rem;">
+      <p style="margin:0;font-size:.95rem;"><strong>The bulk logic:</strong> {plan.bulkNote}</p>
+    </div>
+
+    <h2>Shopping List</h2>
+    <p style="font-size:.9rem;color:#666;margin-bottom:1rem;">Click items to strike them through.</p>
+    <div class="shopping-section">
+      <h3>Produce</h3>
+      <ul class="interactive-checklist">{plan.shopping.produce.map(item => <li><input type="checkbox" /> <span>{item}</span></li>)}</ul>
+    </div>
+    <div class="shopping-section">
+      <h3>Protein (the bulk trip)</h3>
+      <ul class="interactive-checklist">{plan.shopping.protein.map(item => <li><input type="checkbox" /> <span>{item}</span></li>)}</ul>
+    </div>
+    <div class="shopping-section">
+      <h3>Pantry</h3>
+      <ul class="interactive-checklist">{plan.shopping.pantry.map(item => <li><input type="checkbox" /> <span>{item}</span></li>)}</ul>
+    </div>
+    {plan.shopping.dairy.length > 0 && (
+      <div class="shopping-section">
+        <h3>Dairy / Extras</h3>
+        <ul class="interactive-checklist">{plan.shopping.dairy.map(item => <li><input type="checkbox" /> <span>{item}</span></li>)}</ul>
+      </div>
+    )}
+
+    <h2>Estimated Prices</h2>
+    <table class="price-table">
+      <thead><tr><th>Item</th><th>Qty</th><th>Est. Price</th></tr></thead>
+      <tbody>
+        {plan.priceItems.map(item => (
+          <tr><td>{item.item}</td><td>{item.qty}</td><td style="text-align:right;">~${item.low.toFixed(2)}–${item.high.toFixed(2)}</td></tr>
+        ))}
+        <tr class="total-row">
+          <td colspan="2" style="text-align:right;">Total (new items only)</td>
+          <td style="text-align:right;">~${plan.estTotalLow.toFixed(2)}–${plan.estTotalHigh.toFixed(2)}</td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align:right;">Per serving ({servings} servings over {plan.weeks} weeks)</td>
+          <td style="text-align:right;">~${psLow.toFixed(2)}–${psHigh.toFixed(2)}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>The {plan.durationDays}-Day Menu</h2>
+    <p style="font-size:.9rem;color:#666;margin-bottom:1rem;">
+      Each planned day is a fresh dinner for two — the leftover half becomes lunch (or a backup dinner) the next day.
+      Flex days are yours: anything you want, a repeat, or a frozen chicken pouch over rice.
+    </p>
+    <div style={`display:grid;grid-template-columns:repeat(7,1fr);gap:.5rem;margin-bottom:2rem;`}>
+      {plan.menu.map(d => (
+        d.kind === 'recipe'
+          ? <div style={`${cell}background:#fff;`}>
+              <div style="font-weight:600;color:{plan.color};">Day {d.day}</div>
+              <div>{d.recipe}</div>
+            </div>
+          : <div style={`${cell}background:#f9faf9;color:#888;`}>
+              <div style="font-weight:600;">Day {d.day}</div>
+              <div>{d.note}</div>
+            </div>
+      ))}
+    </div>
+
+    <h2>The {plan.recipeCount} Recipes</h2>
+    <p style="font-size:.9rem;color:#666;margin-bottom:1rem;">
+      Recipe-days that repeat (e.g., bowls on days 1 and 6) cook the exact same card — different week, same recipe.
+    </p>
+    {plan.recipes.map(recipe => {
+      const days = daysFor(recipe.name);
+      return (
+        <div class="recipe-card">
+          <h3>{recipe.emoji} {recipe.name} <span style="font-size:.85rem;color:#888;font-weight:400;">— day{days.length > 1 ? 's' : ''} {days.join(', ')}</span></h3>
+          <div class="tags">
+            <span class="tag time">⏱ {recipe.time} min</span>
+            <span class="tag style">{recipe.style}</span>
+            <span class="tag yield">Serves {recipe.servings}</span>
+            <span class="tag cal">~{recipe.cal} cal/serving</span>
+          </div>
+          <div class="ingredients-grid">
+            <div>
+              <h4>Ingredients</h4>
+              <ul>{recipe.ingredients.map(i => <li>{i}</li>)}</ul>
+            </div>
+            <div>
+              <h4>What you'll have left</h4>
+              <ul>{recipe.leftovers.map(l => <li>{l}</li>)}</ul>
+            </div>
+          </div>
+          <div class="instructions">
+            <ol>{recipe.instructions.map(step => <li>{step}</li>)}</ol>
+          </div>
+        </div>
+      );
+    })}
+
+    <h2>Ingredient Usage Tracker</h2>
+    <ul>
+      {plan.usage.map(u => <li><strong>{u.item}:</strong> {u.desc}</li>)}
+    </ul>
+
+    <h2>Bulk-Buy Tips</h2>
+    <ul>
+      {plan.scaling.tips.map(t => <li>{t}</li>)}
+    </ul>
+    <p style="font-size:.9rem;color:#666;">
+      Effective cost: ~${plan.scaling.low.toFixed(2)}–${plan.scaling.high.toFixed(2)}/serving — and that's
+      <em>before</em> counting the ~4 lbs of frozen chicken you carry out of the plan.
+    </p>
+
+    <script>
+      document.querySelectorAll('.interactive-checklist input[type="checkbox"]').forEach(cb => {
+        cb.addEventListener('change', () => {
+          cb.parentElement.classList.toggle('checked', cb.checked);
+        });
+      });
+    </script>
+  </div>
+</Base>

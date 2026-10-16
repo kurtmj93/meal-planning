@@ -224,12 +224,15 @@ Use these when you need a ballpark for any vendor:
 ~/Dev/meal-plan-astro/
 ├── src/
 │   ├── data/plans.ts            ← Single source of truth — add new plans here
+│   ├── data/multiweek-plans.ts  ← Multiweek plans (v1) — add new multiweek plans here
 │   ├── types/plans.ts           ← TypeScript interfaces (MealPlan, Recipe, …)
+│   ├── types/multiweek.ts       ← MultiweekPlan interface
 │   ├── layouts/Base.astro       ← Shared HTML shell
 │   ├── styles/global.css        ← All shared styles
 │   ├── pages/
-│   │   ├── index.astro          ← Hub page (plans + comparison)
+│   │   ├── index.astro          ← Hub page (plans + multiweek plans + comparison)
 │   │   ├── plans/[slug].astro   ← Plan detail (auto-generated from data)
+│   │   └── multiweek/[slug].astro ← Multiweek detail (auto-generated: menu grid + recipes)
 ├── public/
 │   ├── favicon.svg
 │   └── favicon.ico
@@ -240,6 +243,23 @@ Use these when you need a ballpark for any vendor:
 To add a new plan:
 1. Add the plan object to `src/data/plans.ts` following the existing structure
 2. The plan page is auto-generated — no separate files needed
+
+### Multiweek Plans (v1)
+
+A multiweek plan is a separate data model: **one bulk-buy trip (Costco-sized protein boxes) feeding 2–3 weeks of dinners.**
+
+Files: `src/types/multiweek.ts` (interface), `src/data/multiweek-plans.ts` (data), `src/pages/multiweek/[slug].astro` (auto-generated page). The hub lists them in their own section above the comparison table.
+
+Rules for multiweek plans:
+- Protein buys must match **real minimum package sizes** (see the Minimum Package Sizes table above) — size the plan to the box, not to per-lb math
+- Each recipe uses **8 oz of protein (4 oz/serving)** and serves 2; `plannedMeals` = number of scheduled recipe-days
+- `plannedMeals + flexDays = durationDays`; flex days are explicit menu entries (`kind: 'flex'`), not an afterthought
+- Repeated menu days reuse the same unique recipe card (`recipeCount` counts unique recipes)
+- `estTotalLow/High` = sum of `priceItems`; per-serving cost = total ÷ (plannedMeals × 2)
+- Carry-over protein (e.g., leftover frozen chicken) is stated in `usage` and `scaling.tips`, not counted against the plan
+- First plan: `costco-chicken-sausage` (3 weeks, 8.5 lb chicken tray + 3.5 lb Kirkland sausage, 16 dinners + 5 flex). Beef is deliberately a separate plan — Costco 88/12 ($6.80/lb) costs more than Aldi 80/20 ($5.29/lb)
+
+---
 
 ## Tone & Style
 
